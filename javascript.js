@@ -23,8 +23,10 @@
 		}
 	}
 
-	function easyQuestionGenerator(){
 
+
+	function easyQuestionGenerator(){
+		
 	}
 
 	

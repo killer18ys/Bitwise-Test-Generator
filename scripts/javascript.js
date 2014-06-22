@@ -7,8 +7,6 @@
 
 
 
-
-
 	function randomHexGen(difficulty){
 		if (difficulty == "easy") {
 			var letters = '0F'.split(''),
@@ -28,8 +26,9 @@
 		}
 	}
 
+//To PDF
 
-
+	
 	
 //Handlebar Template
 

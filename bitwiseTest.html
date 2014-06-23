@@ -28,76 +28,145 @@
 			<label for="input-test-number">Enter the number of tests.</label>
 			<input class="input-test-number" name="input-test-number" type="text" placeholder="  (1-30)">
 		</div>
-		
-		<div class="secondQuestion">
-			<label for="hardQestions">Enter the number of hard questions.</label>
-			<select name="hardQuestions" id="hardQuestions">
-				<option value="q1">1</option>
-				<option value="q2">2</option>
-				<option value="q3">3</option>
-				<option value="q4">4</option>
-				<option value="q5">5</option>
-				<option value="q6">6</option>
-				<option value="q7">7</option>
-				<option value="q8">8</option>
-				<option value="q9">9</option>
-				<option value="q10">10</option>
-				<option value="q11">11</option>
-				<option value="q12">12</option>
-			</select>
-		</div>
 		<button class="btn-generate">Generate</button>
 	</fieldset>
 
+	<div id="blank_page">
 		<div id="x-handlebar-template">
+
+		</div>
+	</div>
+
+	<div id="download-list">
+		<ul id="download-list-ul">
+			
+		</ul>
+	</div>
+
+	<script id="entry-template" type="text/x-handlebar-template">
+			<div id="test-title">
+				<h2>Технологично училище Електронни системи</h2>
+				<h3>Технология на програмирането</h3>
+				<h3>Тест побитови операции</h3>
+				<h4>Вариант {{testVersion}}</h4>
+			</div>
+
 			<div id="test-wrapper">
 				<div id="first-question" class="question">
 					<p>a = ?  <span>..................</span></p>
-					<p>int orig = {{1qOrig}} </p>
-					<p>int insert = {{1qInsert}} </p>
-					<p>int a = orig | (insert << {{1qNumber}} )</p>
+					<p>int orig = {{_1qOrig}} </p>
+					<p>int insert = {{_1qInsert}} </p>
+					<p>int a = orig | (insert << {{_1qNumber}} )</p>
 				</div>
 
 				<div id="second-question" class="question">
 					<p>b = ? <span>..................</span></p>
-					<p>int orig = {{2qOrig}} </p>
-					<p>int insert = {{2qInsert}} </p>
-					<p>int b = orig | (insert << {{2qNumber}} )</p>
+					<p>int orig = {{_2qOrig}} </p>
+					<p>int insert = {{_2qInsert}} </p>
+					<p>int b = orig | (insert << {{_2qNumber}} )</p>
 				</div>
 
 				<div id="third-question" class="question">
 					<p>AND = ? <span>..................</span></p>
-					<p>int orig = {{3qOrig}} </p>
-					<p>int insert = {{3qInsert}} </p>
-					<p>int a = orig | (insert << {{3qNumber}})</p>
-					<p>int b = orig | (insert << {{3qNumber - 2}})</p>
-					<p>int AND = a & b;</p>
+					<p>int orig = {{_3qOrig}} </p>
+					<p>int insert = {{_3qInsert}} </p>
+					<p>int a = orig | (insert << {{_3qNumber1}})</p>
+					<p>int b = orig | (insert << {{_3qNumber2}})</p>
+					<p>int AND = a & b</p>
 				</div>	
 
 				<div id="fourth-question" class="question">
 					<p>OR = ? <span>..................</span></p>
-					<p>int orig = {{4qOrig}} </p>
-					<p>int insert = {{4qInsert}} </p>
-					<p>int a = orig | (insert << {{4qNumber}})</p>
-					<p>int b = orig | (insert << {{4qNumber - 2}})</p>
-					<p>int OR = a & b;</p>
+					<p>int orig = {{_4qOrig}} </p>
+					<p>int insert = {{_4qInsert}} </p>
+					<p>int a = orig | (insert << {{_4qNumber1}})</p>
+					<p>int b = orig | (insert << {{_4qNumber2}})</p>
+					<p>int OR = a & b</p>
 				</div>
-								
-				<div id="fourth-question" class="question">
-					<p>OR = ? <span>..................</span></p>
-					<p>int orig = {{4qOrig}} </p>
-					<p>int insert = {{4qInsert}} </p>
-					<p>int a = orig | (insert << {{4qNumber}})</p>
-					<p>int b = orig | (insert << {{4qNumber - 2}})</p>
-					<p>int OR = a & b;</p>
+
+				<div id="fifth-question" class="question">
+					<p>XOR = ? <span>..................</span></p>
+					<p>int orig = {{_5qOrig}} </p>
+					<p>int insert = {{_5qInsert}} </p>
+					<p>int a = orig | (insert << {{_5qNumber1}})</p>
+					<p>int b = orig | (insert << {{_5qNumber2}})</p>
+					<p>int XOR = a ^ b</p>
+				</div>	
+
+				<div id="sixth-question" class="question">
+					<p>a = ? <span>..................</span></p>
+					<p>long testValue = {{_6qTestValue}}</p>
+					<p>int a = 0</p>
+					<p>if(testValue & (1 << {{_6qNumber}}))</p>
+					<p>{</p>
+					<p>a = 1</p>
+					<p>}</p>
+					<p>else</p>
+					<p>{</p>
+					<p>a = 2</p>
+					<p>}</p>
+				</div>	
+
+				<div id="seventh-question" class="question">
+					<p>left = ? <span>..................</span></p>
+					<p>int i = {{_7qI}}</p>
+					<p>int left = {{_7qI}} | (1 << {{_7qNumber}})</p>
+				</div>	
+
+				<div id="eighth-question" class="question">
+					<p>result = ? <span>..................</span></p>
+					<p>long value1 = {{_8qValue1}}</p>
+					<p>long value2 = {{_8qValue2}}</p>
+					<p>int a = (value1 << {{_8qNumber1}}) </p>
+					<p>int b = (value2 >> {{_8qNumber2}})</p>
+					<p>int result  = a ^ b</p>
+				</div>	
+
+				<div id="ninth-question" class="question">
+					<p>a = ?, result = ?<span style="margin-left:80px">................</span></p>
+					<p>long testValue = {{_9qTestValue}}</p>
+					<p>int a = 0</p>
+					<p>int result = 0</p>
+					<p>if((result = testValue & testValue ^ testValue) | ( 1 << {{_9qNumber}}))</p>
+					<p>{</p>
+					<p>a = 1</p>
+					<p>}</p>
+					<p>else</p>
+					<p>{</p>
+					<p>a = 2</p>
+					<p>}</p>
+				</div>	
+				
+				<div id="tenth-question" class="question">
+					<p>a = ? <span>................</span></p>
+					<p>long testValue = {{_10qTestValue}}</p>
+					<p>int a = 0</p>
+					<p>if(testValue & testValue ^ ( 1 << {{_10qNumber}}))</p>
+					<p>{</p>
+					<p>a = 1</p>
+					<p>}</p>
+					<p>else</p>
+					<p>{</p>
+					<p>a = 2</p>
+					<p>}</p>
+				</div>	
+
+				<div id="eleventh-question" class="question">
+					<p>result = ? <span>..................</span></p>
+					<p>int value1 = {{_11qValue1}}</p>
+					<p>int value2 = {{_11qValue2}}</p>
+					<p>int result = (value1 << {{_11qNumber1}}) ^ (value2 >> {{_11qNumber2}})</p>
+				</div>	
+
+				<div id="twelfth-question" class="question">
+					<p>result = ? <span>..................</span></p>
+					<p>int value1 = {{_12qValue1}}</p>
+					<p>int value2 = {{_12qValue2}}</p>
+					<p>int result = (value1 << {{_12qNumber1}}) ^ (value2 >> {{_12qNumber2}})</p>
 				</div>	
 
 
 			</div>
-		</div>
-
-	<script id="entry-template" type="text/x-handlebar-template">
-
 	</script>
 
 <script type="text/javascript" src="scripts/javascript.js"></script>

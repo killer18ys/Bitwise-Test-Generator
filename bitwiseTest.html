@@ -5,10 +5,19 @@
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 
-	<script type="text/javascript" src="jsPDF-0.9.0rc2/jspdf.js"></script>
-	<script type="text/javascript" src="jsPDF-0.9.0rc2/jspdf.plugin.standard_fonts_metrics.js"></script> 
-	<script type="text/javascript" src="jsPDF-0.9.0rc2/jspdf.plugin.split_text_to_size.js"></script>               
-	<script type="text/javascript" src="jsPDF-0.9.0rc2/jspdf.plugin.from_html.js"></script>
+	<script type="text/javascript" src="jsPDF/jspdf.js"></script>
+	<script type="text/javascript" src="jsPDF/jspdf.plugin.addhtml.js"></script> 
+	<script type="text/javascript" src="jsPDF/jspdf.plugin.addimage.js"></script> 
+	<script type="text/javascript" src="jsPDF/jspdf.plugin.standard_fonts_metrics.js"></script> 
+	<script type="text/javascript" src="jsPDF/jspdf.plugin.split_text_to_size.js"></script>               
+	<script type="text/javascript" src="jsPDF/jspdf.plugin.from_html.js"></script>
+	<script type="text/javascript" src="jsPDF/jspdf.plugin.autoprint.js"></script>
+	<script type="text/javascript" src="jsPDF/jspdf.plugin.javascript.js"></script>
+	<script type="text/javascript" src="jsPDF/jspdf.plugin.total_pages.js"></script>
+	<script type="text/javascript" src="jsPDF/jspdf.PLUGINTEMPLATE.js"></script>
+	<script type="text/javascript" src="html2canvas/build/html2canvas.min.js"></script>
+	
+
 	<script type="text/javascript" src="frameworks/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="frameworks/handlebars-v1.3.0.js"></script>
 </head>
@@ -41,15 +50,54 @@
 	</fieldset>
 
 		<div id="x-handlebar-template">
+			<div id="test-wrapper">
+				<div id="first-question" class="question">
+					<p>a = ?  <span>..................</span></p>
+					<p>int orig = {{1qOrig}} </p>
+					<p>int insert = {{1qInsert}} </p>
+					<p>int a = orig | (insert << {{1qNumber}} )</p>
+				</div>
 
+				<div id="second-question" class="question">
+					<p>b = ? <span>..................</span></p>
+					<p>int orig = {{2qOrig}} </p>
+					<p>int insert = {{2qInsert}} </p>
+					<p>int b = orig | (insert << {{2qNumber}} )</p>
+				</div>
+
+				<div id="third-question" class="question">
+					<p>AND = ? <span>..................</span></p>
+					<p>int orig = {{3qOrig}} </p>
+					<p>int insert = {{3qInsert}} </p>
+					<p>int a = orig | (insert << {{3qNumber}})</p>
+					<p>int b = orig | (insert << {{3qNumber - 2}})</p>
+					<p>int AND = a & b;</p>
+				</div>	
+
+				<div id="fourth-question" class="question">
+					<p>OR = ? <span>..................</span></p>
+					<p>int orig = {{4qOrig}} </p>
+					<p>int insert = {{4qInsert}} </p>
+					<p>int a = orig | (insert << {{4qNumber}})</p>
+					<p>int b = orig | (insert << {{4qNumber - 2}})</p>
+					<p>int OR = a & b;</p>
+				</div>
+								
+				<div id="fourth-question" class="question">
+					<p>OR = ? <span>..................</span></p>
+					<p>int orig = {{4qOrig}} </p>
+					<p>int insert = {{4qInsert}} </p>
+					<p>int a = orig | (insert << {{4qNumber}})</p>
+					<p>int b = orig | (insert << {{4qNumber - 2}})</p>
+					<p>int OR = a & b;</p>
+				</div>	
+
+
+			</div>
 		</div>
 
-
 	<script id="entry-template" type="text/x-handlebar-template">
-		{{#each context}}	
-			{{name}}
-			{{date}}
-		{{/each}}
+
 	</script>
 
 <script type="text/javascript" src="scripts/javascript.js"></script>

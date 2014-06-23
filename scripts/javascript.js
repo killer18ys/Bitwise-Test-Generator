@@ -5,8 +5,6 @@
 		testField = document.getElementById("x-handlebar-template");
 
 
-
-
 	function randomHexGen(difficulty){
 		if (difficulty == "easy") {
 			var letters = '0F'.split(''),
@@ -26,10 +24,37 @@
 		}
 	}
 
+	function downloadURI(uri, name) {
+	  var link = document.createElement("a");
+	  link.download = name;
+	  link.href = uri;
+	  link.click();
+	  link.innerHTML = name;
+	  return link
+	}
+
+	function contextGenerator(){}
+
+
+
 //To PDF
 
-	
-	
+function toPDF(element, name){
+	html2canvas(element, {
+	    onrendered: function(canvas) {
+			var pdf = new jsPDF();
+			var imgData = canvas.toDataURL("image/jpeg", 1.0);
+			pdf.addImage(imgData, 'JPEG', 0, 0);
+			var output = pdf.output('datauristring');
+			
+			document.body.appendChild(downloadURI(output, name + ".pdf"));
+	    }
+	});
+}
+
+
+
+
 //Handlebar Template
 
 var source = document.getElementById("entry-template").innerHTML,
@@ -48,5 +73,19 @@ var source = document.getElementById("entry-template").innerHTML,
 	})
 
 	testField.innerHTML += html;
+
+
+
+//Main
+
+	toPDF(testField, "test");
+
+
+
+
+
+
+
+
 
 }());

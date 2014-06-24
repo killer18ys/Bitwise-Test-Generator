@@ -5,3 +5,4 @@ This script generates bitwise test.
 
 
 Important: Only Windows supported!
+----------

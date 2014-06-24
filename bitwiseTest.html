@@ -22,25 +22,19 @@
 	<script type="text/javascript" src="frameworks/handlebars-v1.3.0.js"></script>
 </head>
 <body>
-	<fieldset id="main">
-		<legend>Bitwise Test</legend>
-		<div>
-			<label for="input-test-number">Enter the number of tests.</label>
-			<input class="input-test-number" name="input-test-number" type="text" placeholder="  (1-30)">
-		</div>
-		<button class="btn-generate">Generate</button>
-	</fieldset>
+	<div id="main">
+	<h1>Bitwise Test Generator</h1>
+		<div id="main-inner">
+
+		</div>	
+			<button class="btn-generate buttons">Generate New Test</button>
+			<button class="btn-reset buttons">Reset</button>
+	</div>
 
 	<div id="blank_page">
 		<div id="x-handlebar-template">
 
 		</div>
-	</div>
-
-	<div id="download-list">
-		<ul id="download-list-ul">
-			
-		</ul>
 	</div>
 
 	<script id="entry-template" type="text/x-handlebar-template">

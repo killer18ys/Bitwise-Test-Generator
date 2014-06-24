@@ -20,28 +20,63 @@ body{
 #main{
 	position: relative;
 	display: block;
-	margin: 50px auto;
+	margin: 50px auto 0 auto;
 	width: 360px;
-	height: 80px;
-	padding: 10px;
+	height: 180px;
+	padding: 15px;
 	border-radius: 15px;
 	border: 1px solid #000;
+	background-color: #f0f0f0;
+}
+#main h1 {
+	text-align: center;
 }
 
-#main legend{
-	padding: 0 5px;
-}
 
-#main .btn-generate{
+#main-inner{
 	position: relative;
-	width: 360px;
-	height: 30px;
-	margin-top: 10px; 
+	display: block;
+	width: auto;
+	height: 80px;
+	margin-top: 10px;
+	border-radius: 15px;
+	border: 1px solid #000;
+	background-color: #fff;
 }
 
-#main .input-test-number{
+#main-inner #downloadLink{
+	float: right;
+	margin: 30px 40px 20px 20px;
+}
+
+#main-inner #downloadLinkAnswers{
+	float: right;
+	margin: 30px 40px 20px 20px;
+}
+
+#main-inner #downloadLink a{
+	text-decoration: none;
+}
+
+#main-inner #downloadLink a:hover{
+	text-decoration: underline;
+}
+
+#main-inner #downloadLinkAnswers a{
+	text-decoration: none;
+}
+
+#main-inner #downloadLinkAnswers a:hover{
+	text-decoration: underline;
+}
+
+#main .buttons{
 	position: relative;
-	width: 50px;
+	display: block;
+	width: 150px;
+	padding: 10px;
+	margin: 10px 10px 10px 17px;
+	float: left;
 }
 
 #x-handlebar-template{
@@ -90,17 +125,3 @@ body{
 	margin-left: 130px;
 }
 
-#download-list{
-	position: relative;
-	display: block;
-	width: 400px;
-	height: 400px;
-	margin: 0 auto;
-	padding: 30px;
-	border-radius: 15px;
-	border: 1px solid #000;
-}
-#download-list-ul{
-	position: relative;
-
-}
